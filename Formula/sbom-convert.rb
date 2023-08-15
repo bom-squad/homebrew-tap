@@ -5,13 +5,13 @@
 class SbomConvert < Formula
   desc "A tool to convert between different Software Bill of Materials (SBOM) formats."
   homepage "https://github.com/bom-squad/sbom-convert"
-  version "0.0.1"
+  version "0.0.2"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.1/sbom-convert_darwin_arm64.tar.gz"
-      sha256 "2cfd21c612f2f248a5d9fc6d8c3f31b2d126b2696c1cd7b70a914d644e969239"
+      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.2/sbom-convert_darwin_arm64.tar.gz"
+      sha256 "89b2ca93abcd7d2d88d3a7e74c0856388c1a06ce18b681904ce91e16f37fd1c6"
 
       def install
         bin.install "sbom-convert"
@@ -22,8 +22,8 @@ class SbomConvert < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.1/sbom-convert_darwin_amd64.tar.gz"
-      sha256 "32f240966ea8a2716e8a39febf30b1203a207f683f0ee5a6139c6ad4c37ef634"
+      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.2/sbom-convert_darwin_amd64.tar.gz"
+      sha256 "cd59a4d5daa360c9b49e7a24dd702f8113a9538a3355bd6abf6ad1c45803028b"
 
       def install
         bin.install "sbom-convert"
@@ -37,8 +37,8 @@ class SbomConvert < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.1/sbom-convert_linux_armv7.tar.gz"
-      sha256 "b8a6f576fa667be018c0c896941b9ba42668f638b9b9be1d65eeecd4713bc16e"
+      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.2/sbom-convert_linux_armv7.tar.gz"
+      sha256 "8640296ae28a5329061a368d30cb3f02b55f01a27872176b9f11c8eb0ea338e9"
 
       def install
         bin.install "sbom-convert"
@@ -49,8 +49,8 @@ class SbomConvert < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.1/sbom-convert_linux_amd64.tar.gz"
-      sha256 "5f981720768c9bad6e8a778e341d50ead40a894f3a906478a0d5b47816396398"
+      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.2/sbom-convert_linux_amd64.tar.gz"
+      sha256 "9a909f2df9218cfd46bfd35218e873a4ac2cd870a106a7b6c6ffaf3a5910b8ec"
 
       def install
         bin.install "sbom-convert"
@@ -61,8 +61,8 @@ class SbomConvert < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.1/sbom-convert_linux_arm64.tar.gz"
-      sha256 "0e46591195d93b19ef8615d3a88c26c4eac0b9b0e52dbd55feb94dbe9ebd14ac"
+      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.2/sbom-convert_linux_arm64.tar.gz"
+      sha256 "8df205091cdf69693a845681d2f39646352fca098ca83497df4e72464f5a212b"
 
       def install
         bin.install "sbom-convert"
