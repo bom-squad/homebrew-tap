@@ -5,13 +5,13 @@
 class SbomConvert < Formula
   desc "A tool to convert between different Software Bill of Materials (SBOM) formats."
   homepage "https://github.com/bom-squad/sbom-convert"
-  version "0.0.2"
+  version "0.0.4"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.2/sbom-convert_darwin_arm64.tar.gz"
-      sha256 "89b2ca93abcd7d2d88d3a7e74c0856388c1a06ce18b681904ce91e16f37fd1c6"
+    if Hardware::CPU.intel?
+      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.4/sbom-convert_darwin_amd64.tar.gz"
+      sha256 "519d19766e8750c6f378d5356604e1ac873f5b87113c6e29a95d67267e149049"
 
       def install
         bin.install "sbom-convert"
@@ -21,9 +21,9 @@ class SbomConvert < Formula
         man1.install "manpages/sbom-convert.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.2/sbom-convert_darwin_amd64.tar.gz"
-      sha256 "cd59a4d5daa360c9b49e7a24dd702f8113a9538a3355bd6abf6ad1c45803028b"
+    if Hardware::CPU.arm?
+      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.4/sbom-convert_darwin_arm64.tar.gz"
+      sha256 "551735035b78dfdac69b9d3fa4126384767ffe8558a975f70aabf60d406c6466"
 
       def install
         bin.install "sbom-convert"
@@ -37,20 +37,8 @@ class SbomConvert < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.2/sbom-convert_linux_armv7.tar.gz"
-      sha256 "8640296ae28a5329061a368d30cb3f02b55f01a27872176b9f11c8eb0ea338e9"
-
-      def install
-        bin.install "sbom-convert"
-        bash_completion.install "completions/sbom-convert.bash" => "sbom-convert"
-        zsh_completion.install "completions/sbom-convert.zsh" => "_sbom-convert"
-        fish_completion.install "completions/sbom-convert.fish"
-        man1.install "manpages/sbom-convert.1.gz"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.2/sbom-convert_linux_amd64.tar.gz"
-      sha256 "9a909f2df9218cfd46bfd35218e873a4ac2cd870a106a7b6c6ffaf3a5910b8ec"
+      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.4/sbom-convert_linux_armv7.tar.gz"
+      sha256 "642d50be6c0ed30975e7dfac51875ca94ce149c279645f0f6aa775f733679d22"
 
       def install
         bin.install "sbom-convert"
@@ -61,8 +49,20 @@ class SbomConvert < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.2/sbom-convert_linux_arm64.tar.gz"
-      sha256 "8df205091cdf69693a845681d2f39646352fca098ca83497df4e72464f5a212b"
+      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.4/sbom-convert_linux_arm64.tar.gz"
+      sha256 "dc6b5150c7b79b8da0da049fcae653874ad338440b144f4961e50782dbf5551b"
+
+      def install
+        bin.install "sbom-convert"
+        bash_completion.install "completions/sbom-convert.bash" => "sbom-convert"
+        zsh_completion.install "completions/sbom-convert.zsh" => "_sbom-convert"
+        fish_completion.install "completions/sbom-convert.fish"
+        man1.install "manpages/sbom-convert.1.gz"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/bom-squad/sbom-convert/releases/download/v0.0.4/sbom-convert_linux_amd64.tar.gz"
+      sha256 "01b0e734dd75c25a1d18ac35f78f99659aa6650b6356e63114e7e6aa8f5920a3"
 
       def install
         bin.install "sbom-convert"
